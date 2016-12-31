@@ -1,5 +1,5 @@
 # primes
-Prime check in 4 nanosecond
+Prime check in 4 nanoseconds.
 ##Usage
 ```go
 import (
