@@ -9,15 +9,15 @@ import (
 
 func main() {
   // calculate all primes up to some max number
-	primes.InitPrimes(300)
+  primes.InitPrimes(300)
   
   // do the prime check
   // CAUTION: do not check i > 300
-	for i := 0; i <= 300; i++ {
+  for i := 0; i <= 300; i++ {
     if primes.Primes(i) {
-		  fmt.Println(i, "is prime")
+      fmt.Println(i, "is prime")
     }
-	}
+  }
 }
 ```
 
