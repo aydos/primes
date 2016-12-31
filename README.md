@@ -22,4 +22,4 @@ func main() {
 }
 ```
 ## CAUTION
-Primes() do not return error. It returns only true or false. If you check bigger number than the initializing one, it will say "its not prime". So, choose it wisely and do not check biggers than it.
+Primes() do not return error. It returns only true or false. If you check bigger number than the initializing one, it will say "its not prime". So, choose it wisely and do not check biggers.
