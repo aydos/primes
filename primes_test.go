@@ -2,6 +2,7 @@ package primes
 
 import (
 	"math/big"
+	"math/rand"
 	"testing"
 )
 
@@ -54,13 +55,15 @@ func Test(t *testing.T) {
 
 func BenchmarkPrimes(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = Primes(i)
+		k := rand.Intn(max)
+		_ = Primes(k)
 	}
 }
 
 func BenchmarkProbablyPrime(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		b := big.NewInt(int64(i))
+		k := rand.Intn(max)
+		b := big.NewInt(int64(k))
 		_ = b.ProbablyPrime(20)
 	}
 }

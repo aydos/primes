@@ -25,10 +25,11 @@ func InitPrimes(m int) {
 	} else {
 		max = m
 	}
+	// calculate all primes up to max
 	for i := 23; i < max; i++ {
 		Primes(i)
 	}
-	last = primes[len(primes)-1]
+	last = primes[len(primes)-1] // last calculated prime
 }
 
 func Primes(p int) bool {
@@ -42,7 +43,9 @@ func Primes(p int) bool {
 	f := float64(p)
 	if p <= last {
 
-		n := int(math.Floor(f/math.Log(f)-1)) - 1
+		// this is the magic line
+		// n is the indice very close to p
+		n := int(f/math.Log(f)) - 2
 
 		for i := n; i < len(primes); i++ {
 			if p == primes[i] {
@@ -60,7 +63,7 @@ func Primes(p int) bool {
 			return false
 		}
 		if int(math.Sqrt(f)) < primes[i] {
-			break
+			break // it is prime
 		}
 	}
 
