@@ -4,11 +4,12 @@ Prime check in 4 nanosecond
 ```go
 import (
   "fmt"
-	"github.com/aydos/primes"
+  "github.com/aydos/primes"
 )
 
 func main() {
   // calculate all primes up to some max number
+  // you can put this line in init()
   primes.InitPrimes(300)
   
   // do the prime check
@@ -20,6 +21,5 @@ func main() {
   }
 }
 ```
-
 ## CAUTION
-Primes() do not return error. It returns only true or false. If you check bigger number then the initializing one it will say "its not prime".
+Primes() do not return error. It returns only true or false. If you check bigger number than the initializing one, it will say "its not prime". So, choose it wisely and do not check biggers than it.
