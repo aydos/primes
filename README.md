@@ -1,5 +1,5 @@
 # primes
-Prime check in 4 nanoseconds.
+Primes for projects which extremely do prime check.
 ##Usage
 ```go
 import (
