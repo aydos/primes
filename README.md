@@ -2,6 +2,8 @@
 Primes for projects which extremely do prime check.
 ## Usage
 ```go
+package main
+
 import (
   "fmt"
   "github.com/aydos/primes"
@@ -22,7 +24,7 @@ func main() {
     }
   }
   // you can use the the primes.Primes slice
-  fmt.Println("There are",len(primes.Primes),"primes upto 300"
+  fmt.Println("There are", len(primes.Primes), "primes upto 300")
 }
 ```
 ## CAUTION
