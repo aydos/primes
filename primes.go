@@ -25,7 +25,7 @@ func InitPrimes(m int) {
 		max = m
 	}
 	// calculate all primes up to max
-	for i := 23; i < max; i++ {
+	for i := 23; i <= max; i++ {
 		Primes(i)
 	}
 }
