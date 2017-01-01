@@ -7,7 +7,6 @@ import (
 var (
 	primes []int
 	max    = 400000
-	last   = 0
 )
 
 func InitPrimes(m int) {
@@ -29,7 +28,6 @@ func InitPrimes(m int) {
 	for i := 23; i < max; i++ {
 		Primes(i)
 	}
-	last = primes[len(primes)-1] // last calculated prime
 }
 
 func Primes(p int) bool {
@@ -41,7 +39,7 @@ func Primes(p int) bool {
 	}
 
 	f := float64(p)
-	if p <= last {
+	if p <= primes[len(primes)-1] {
 
 		// this is the magic line
 		// n is the indice very close to p
