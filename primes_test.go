@@ -37,14 +37,14 @@ func Test(t *testing.T) {
 		{2018, false},
 	}
 	for _, c := range tests {
-		if got := Primes(c.i); got != c.b {
+		if got := IsPrime(c.i); got != c.b {
 			t.Errorf("Prime calculation error: %d", c.i)
 		}
 	}
 
 	// Test method 2
 	for i := 0; i < max; i++ {
-		p := Primes(i)
+		p := IsPrime(i)
 		b := big.NewInt(int64(i))
 		if p != b.ProbablyPrime(20) {
 			t.Errorf("Probably Prime calculation error: %v", i)
@@ -53,14 +53,30 @@ func Test(t *testing.T) {
 
 }
 
-func BenchmarkPrimes(b *testing.B) {
+func BenchmarkIsPrime(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		k := rand.Intn(max)
-		_ = Primes(k)
+		_ = IsPrime(k)
 	}
 }
 
-func BenchmarkProbablyPrime(b *testing.B) {
+func BenchmarkProbablyPrime3(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		k := rand.Intn(max)
+		b := big.NewInt(int64(k))
+		_ = b.ProbablyPrime(3)
+	}
+}
+
+func BenchmarkProbablyPrime10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		k := rand.Intn(max)
+		b := big.NewInt(int64(k))
+		_ = b.ProbablyPrime(10)
+	}
+}
+
+func BenchmarkProbablyPrime20(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		k := rand.Intn(max)
 		b := big.NewInt(int64(k))
