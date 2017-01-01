@@ -14,7 +14,6 @@ func init() {
 }
 
 func main() {
-  
   // do the prime check
   // CAUTION: do not check i > 300
   for i := 0; i <= 300; i++ {
